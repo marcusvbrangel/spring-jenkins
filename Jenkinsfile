@@ -13,15 +13,16 @@ pipeline {
         stage('Checkout') {
             steps {
                 git url: 'https://github.com/marcusvbrangel/spring-jenkins.git', branch: 'developer'
-                echo "Maven Instalado: ${MAVEN_HOME}"
+                echo "MAVEN_HOME: ${MAVEN_HOME}"
+                echo "maven-container: ${maven-container}"
             }
         }
 
-        stage('Build') {
-            steps {
-                sh "${MAVEN_HOME}/bin/mvn clean install"
-            }
-        }
+//         stage('Build') {
+//             steps {
+//                 sh "${MAVEN_HOME}/bin/mvn clean install"
+//             }
+//         }
 
 //         stage('Test') {
 //             steps {
