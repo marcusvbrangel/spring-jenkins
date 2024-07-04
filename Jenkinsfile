@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        MAVEN_HOME = tool name: 'maven-container', type: 'maven'
+        MAVEN_HOME = tool name: 'maven-387-container', type: 'maven'
 //         JAVA_HOME = tool name: 'JDK 17', type: 'jdk'
 //         DOCKER_CREDENTIALS_ID = 'docker-credentials'
 //         DOCKER_IMAGE = 'seu-usuario/seu-repositorio'
@@ -12,8 +12,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/marcusvbrangel/spring-jenkins.git', branch: 'developer'
+                echo "-----------------------------------------------------------------------"
                 echo "MAVEN_HOME: ${MAVEN_HOME}"
+                echo "-----------------------------------------------------------------------"
+                git url: 'https://github.com/marcusvbrangel/spring-jenkins.git', branch: 'developer'
             }
         }
 
