@@ -14,7 +14,6 @@ pipeline {
             steps {
                 git url: 'https://github.com/marcusvbrangel/spring-jenkins.git', branch: 'developer'
                 echo "MAVEN_HOME: ${MAVEN_HOME}"
-                echo "maven-container: ${env.maven-container}"
             }
         }
 
