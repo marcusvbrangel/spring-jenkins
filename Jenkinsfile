@@ -16,62 +16,62 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                sh "${MAVEN_HOME}/bin/mvn clean install"
-            }
-        }
+//         stage('Build') {
+//             steps {
+//                 sh "${MAVEN_HOME}/bin/mvn clean install"
+//             }
+//         }
 
-        stage('Test') {
-            steps {
-                sh "${MAVEN_HOME}/bin/mvn test"
-            }
-        }
+//         stage('Test') {
+//             steps {
+//                 sh "${MAVEN_HOME}/bin/mvn test"
+//             }
+//         }
 
-        stage('SonarQube Analysis') {
-            environment {
-                scannerHome = tool 'SonarQube Scanner'
-            }
-            steps {
-                withSonarQubeEnv('SonarQube Server') {
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
-            }
-        }
+//         stage('SonarQube Analysis') {
+//             environment {
+//                 scannerHome = tool 'SonarQube Scanner'
+//             }
+//             steps {
+//                 withSonarQubeEnv('SonarQube Server') {
+//                     sh "${scannerHome}/bin/sonar-scanner"
+//                 }
+//             }
+//         }
 
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    docker.build(DOCKER_IMAGE)
-                }
-            }
-        }
+//         stage('Build Docker Image') {
+//             steps {
+//                 script {
+//                     docker.build(DOCKER_IMAGE)
+//                 }
+//             }
+//         }
 
-        stage('Push Docker Image') {
-            steps {
-                script {
-                    docker.withRegistry('', DOCKER_CREDENTIALS_ID) {
-                        docker.image(DOCKER_IMAGE).push()
-                    }
-                }
-            }
-        }
+//         stage('Push Docker Image') {
+//             steps {
+//                 script {
+//                     docker.withRegistry('', DOCKER_CREDENTIALS_ID) {
+//                         docker.image(DOCKER_IMAGE).push()
+//                     }
+//                 }
+//             }
+//         }
 
-        stage('Deploy') {
-            when {
-                branch 'main'
-            }
-            steps {
-                echo 'Deploying to production...'
-                // Adicione aqui os comandos ou scripts necessários para o deploy
-            }
-        }
+//         stage('Deploy') {
+//             when {
+//                 branch 'main'
+//             }
+//             steps {
+//                 echo 'Deploying to production...'
+//                 // Adicione aqui os comandos ou scripts necessários para o deploy
+//             }
+//         }
     }
 
-    post {
-        always {
-            junit '**/target/surefire-reports/*.xml'
-            cleanWs()
-        }
-    }
+//     post {
+//         always {
+//             junit '**/target/surefire-reports/*.xml'
+//             cleanWs()
+//         }
+//     }
 }
