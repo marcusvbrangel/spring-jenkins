@@ -1,13 +1,13 @@
 pipeline {
     agent any
 
-//     environment {
-//         MAVEN_HOME = tool name: 'Maven 3', type: 'maven'
+    environment {
+        MAVEN_HOME = tool name: 'maven-container', type: 'maven'
 //         JAVA_HOME = tool name: 'JDK 17', type: 'jdk'
 //         DOCKER_CREDENTIALS_ID = 'docker-credentials'
 //         DOCKER_IMAGE = 'seu-usuario/seu-repositorio'
 //         SONARQUBE_ENVIRONMENT = 'sonarqube'
-//     }
+    }
 
     stages {
         stage('Checkout') {
