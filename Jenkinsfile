@@ -18,7 +18,7 @@ pipeline {
                 echo "MAVEN_HOME: ${MAVEN_HOME}"
                 echo "JAVA_HOME: ${JAVA_HOME}"
                 echo "GIT_HOME: ${GIT_HOME}"
-                echo "SONARQUBE_ENVIRONMENT: ${SONARQUBE_ENVIRONMENT}"
+//                 echo "SONARQUBE_ENVIRONMENT: ${SONARQUBE_ENVIRONMENT}"
                 echo "-----------------------------------------------------------------------"
                 git url: 'https://github.com/marcusvbrangel/spring-jenkins.git', branch: 'developer'
             }
