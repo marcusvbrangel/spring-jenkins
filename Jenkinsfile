@@ -38,8 +38,8 @@ pipeline {
 
         stage('SonarQube Analysis') {
             environment {
-//                 scannerHome = tool 'SonarQube Scanner'
-                scannerHome = tool 'sonarscanner-46-container'
+                scannerHome = tool 'SonarQube Scanner'
+//                 scannerHome = tool 'sonarscanner-46-container'
             }
             steps {
                 withSonarQubeEnv('SonarQube Server') {
