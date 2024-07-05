@@ -8,7 +8,7 @@ pipeline {
 //         DOCKER_CREDENTIALS_ID = 'docker-credentials'
 //         DOCKER_IMAGE = 'seu-usuario/seu-repositorio'
 //         SONARQUBE_ENVIRONMENT = 'sonarqube'
-        SONARQUBE_ENVIRONMENT = 'sonarscanner-46-container'
+        SONARQUBE_ENVIRONMENT = 'SonarQube Scanner'
     }
 
     stages {
