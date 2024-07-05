@@ -31,11 +31,11 @@ pipeline {
             }
         }
 
-//         stage('Test') {
-//             steps {
-//                 sh "${MAVEN_HOME}/bin/mvn test"
-//             }
-//         }
+        stage('Test') {
+            steps {
+                sh "${MAVEN_HOME}/bin/mvn test"
+            }
+        }
 
 //         stage('SonarQube Analysis') {
 //             environment {
