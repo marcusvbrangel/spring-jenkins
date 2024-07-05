@@ -4,7 +4,7 @@ pipeline {
     environment {
         MAVEN_HOME = tool name: 'maven-387-container', type: 'maven'
         JAVA_HOME = tool name: 'java-openjdk-17011-container', type: 'jdk'
-        GIT_HOME = tool name: 'git-2392-container', type: 'git'
+//         GIT_HOME = tool name: 'git-2392-container', type: 'git'
 //         DOCKER_CREDENTIALS_ID = 'docker-credentials'
 //         DOCKER_IMAGE = 'seu-usuario/seu-repositorio'
 //         SONARQUBE_ENVIRONMENT = 'sonarqube'
@@ -17,7 +17,7 @@ pipeline {
                 echo "-----------------------------------------------------------------------"
                 echo "MAVEN_HOME: ${MAVEN_HOME}"
                 echo "JAVA_HOME: ${JAVA_HOME}"
-                echo "GIT_HOME: ${GIT_HOME}"
+//                 echo "GIT_HOME: ${GIT_HOME}"
 //                 echo "SONARQUBE_ENVIRONMENT: ${SONARQUBE_ENVIRONMENT}"
                 echo "-----------------------------------------------------------------------"
                 git url: 'https://github.com/marcusvbrangel/spring-jenkins.git', branch: 'developer'
