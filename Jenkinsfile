@@ -25,11 +25,11 @@ pipeline {
             }
         }
 
-//         stage('Build') {
-//             steps {
-//                 sh "${MAVEN_HOME}/bin/mvn clean install"
-//             }
-//         }
+        stage('Build') {
+            steps {
+                sh "${MAVEN_HOME}/bin/mvn clean install"
+            }
+        }
 
 //         stage('Test') {
 //             steps {
