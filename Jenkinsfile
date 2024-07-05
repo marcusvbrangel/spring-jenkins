@@ -7,7 +7,8 @@ pipeline {
         GIT_HOME = tool name: 'git-2392-container', type: 'git'
 //         DOCKER_CREDENTIALS_ID = 'docker-credentials'
 //         DOCKER_IMAGE = 'seu-usuario/seu-repositorio'
-        SONARQUBE_ENVIRONMENT = 'sonarqube'
+//         SONARQUBE_ENVIRONMENT = 'sonarqube'
+        SONARQUBE_ENVIRONMENT = 'sonarscanner-46-container'
     }
 
     stages {
@@ -37,7 +38,8 @@ pipeline {
 
         stage('SonarQube Analysis') {
             environment {
-                scannerHome = tool 'SonarQube Scanner'
+//                 scannerHome = tool 'SonarQube Scanner'
+                scannerHome = tool 'sonarscanner-46-container'
             }
             steps {
                 withSonarQubeEnv('SonarQube Server') {
