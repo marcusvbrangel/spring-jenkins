@@ -8,7 +8,7 @@ pipeline {
 //         DOCKER_CREDENTIALS_ID = 'docker-credentials'
 //         DOCKER_IMAGE = 'seu-usuario/seu-repositorio'
 //         SONARQUBE_ENVIRONMENT = 'sonarqube'
-        SONARQUBE_ENVIRONMENT = 'SonarQube Scanner'
+//         SONARQUBE_ENVIRONMENT = 'SonarQube Scanner'
     }
 
     stages {
@@ -36,17 +36,17 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            environment {
-                scannerHome = tool 'SonarQube Scanner'
-//                 scannerHome = tool 'sonarscanner-46-container'
-            }
-            steps {
-                withSonarQubeEnv('SonarQube Server') {
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
-            }
-        }
+//         stage('SonarQube Analysis') {
+//             environment {
+//                 scannerHome = tool 'SonarQube Scanner'
+// //                 scannerHome = tool 'sonarscanner-46-container'
+//             }
+//             steps {
+//                 withSonarQubeEnv('SonarQube Server') {
+//                     sh "${scannerHome}/bin/sonar-scanner"
+//                 }
+//             }
+//         }
 
 //         stage('Build Docker Image') {
 //             steps {
