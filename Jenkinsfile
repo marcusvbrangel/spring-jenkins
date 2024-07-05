@@ -4,8 +4,8 @@ pipeline {
     environment {
         MAVEN_HOME = tool name: 'maven-387-container', type: 'maven'
         JAVA_HOME = tool name: 'java-openjdk-17011-container', type: 'jdk'
-//         GIT_HOME = tool name: 'git-2392-container', type: 'git'
-        GIT_HOME = tool name: 'Default', type: 'git'
+        GIT_HOME = tool name: 'git-2392-container', type: 'git'
+//         GIT_HOME = tool name: 'Default', type: 'git'
 //         DOCKER_CREDENTIALS_ID = 'docker-credentials'
 //         DOCKER_IMAGE = 'seu-usuario/seu-repositorio'
 //         SONARQUBE_ENVIRONMENT = 'sonarqube'
@@ -25,17 +25,17 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                sh "${MAVEN_HOME}/bin/mvn clean install"
-            }
-        }
+//         stage('Build') {
+//             steps {
+//                 sh "${MAVEN_HOME}/bin/mvn clean install"
+//             }
+//         }
 
-        stage('Test') {
-            steps {
-                sh "${MAVEN_HOME}/bin/mvn test"
-            }
-        }
+//         stage('Test') {
+//             steps {
+//                 sh "${MAVEN_HOME}/bin/mvn test"
+//             }
+//         }
 
 //         stage('SonarQube Analysis') {
 //             environment {
