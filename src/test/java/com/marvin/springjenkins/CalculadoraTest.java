@@ -33,6 +33,7 @@ public class CalculadoraTest {
         assertEquals(2, calculadora.dividir(6, 3));
         assertEquals(-2, calculadora.dividir(-4, 2));
         assertEquals(0.5, calculadora.dividir(1, 2));
+        assertEquals(0.5, calculadora.dividir(1, 0));
     }
 
     @Test
